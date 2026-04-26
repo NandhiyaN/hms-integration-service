@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prescription-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prescription
+  template:
+    metadata:
+      labels:
+        app: prescription
+    spec:
+      containers:
+        - name: prescription
+          image: hms-integration-compose-prescription-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9004

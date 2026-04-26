@@ -1,0 +1,68 @@
+services:
+  patient-service:
+    build:
+      context: ../hms-patient-service
+      dockerfile: Dockerfile
+    container_name: hms-patient-service
+    ports:
+      - "9001:9001"
+    networks:
+      - hms-network
+
+  billing-service:
+    build:
+      context: ../hms-billing-service
+      dockerfile: Dockerfile
+    container_name: hms-billing-service
+    ports:
+      - "9005:9005"
+    environment:
+      APPOINTMENT_SERVICE_URL: http://appointment-service:9003/v1
+    depends_on:
+      - patient-service
+    networks:
+      - hms-network
+  
+  appointment-service:
+    build:
+      context: ../hms-appointment-service
+      dockerfile: Dockerfile
+    container_name: hms-appointment-service
+    ports:
+      - "9003:9003"
+    networks:
+      - hms-network
+
+  prescription-service:
+    build:
+      context: ../hms-prescription-service
+      dockerfile: Dockerfile
+    container_name: hms-prescription-service
+    ports:
+      - "9004:9004"
+    networks:
+      - hms-network
+
+  gateway-service:
+    build:
+      context: ../hms-gateway-service
+      dockerfile: Dockerfile
+    container_name: hms-gateway-service
+    ports:
+      - "9000:9000"
+    environment:
+      PATIENT_SERVICE_URL: http://patient-service:9001/v1
+      BILLING_SERVICE_URL: http://billing-service:9005/v1
+      APPOINTMENT_SERVICE_URL: http://appointment-service:9003/v1
+      PRESCRIPTION_SERVICE_URL: http://prescription-service:9004/v1
+    depends_on:
+      - patient-service
+      - billing-service
+      - appointment-service
+      - prescription-service
+    networks:
+      - hms-network
+
+networks:
+  hms-network:
+    driver: bridge
