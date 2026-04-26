@@ -9,6 +9,42 @@ services:
     networks:
       - hms-network
 
+  doctor-service:
+    build:
+      context: ../hms-doctor-service
+      dockerfile: Dockerfile
+    container_name: hms-doctor-service
+    ports:
+      - "9002:9002"
+    environment:
+      - PAYMENT_URL=http://payment-service:9006/v1/payments/
+      - NOTIFICATION_URL=http://notification-service:9007/v1/notifications/
+    depends_on:
+      - payment-service
+      - notification-service
+    networks:
+      - hms-network
+
+  notification-service:
+    build:
+      context: ../hms-notification-service
+      dockerfile: Dockerfile
+    container_name: hms-notification-service
+    ports:
+      - "9006:9006"
+    networks:
+      - hms-network
+  
+  payment-service:
+    build:
+      context: ../hms-payment-service
+      dockerfile: Dockerfile
+    container_name: hms-payment-service
+    ports:
+      - "9007:9007"
+    networks:
+      - hms-network
+
   billing-service:
     build:
       context: ../hms-billing-service
