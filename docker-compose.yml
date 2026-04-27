@@ -66,6 +66,12 @@ services:
     container_name: hms-appointment-service
     ports:
       - "9003:9003"
+    environment:
+      - PATIENT_SERVICE_URL=http://patient-service:9001/v1
+      - DOCTOR_SERVICE_URL=http://doctor-service:9002/v1
+    depends_on:
+      - patient-service
+      - doctor-service
     networks:
       - hms-network
 
