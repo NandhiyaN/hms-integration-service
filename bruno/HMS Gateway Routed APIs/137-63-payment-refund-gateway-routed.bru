@@ -1,0 +1,16 @@
+meta {
+  name: Gateway Routed - Payment - Refund Payment
+  type: http
+  seq: 137
+}
+
+post {
+  url: http://localhost:9000/api/v1/payments/payments/1/refund
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+  X-Correlation-ID: payment-refund-001
+}

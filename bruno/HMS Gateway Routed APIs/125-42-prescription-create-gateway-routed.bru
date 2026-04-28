@@ -1,0 +1,28 @@
+meta {
+  name: Gateway Routed - Prescription - Create Prescription
+  type: http
+  seq: 125
+}
+
+post {
+  url: http://localhost:9000/api/v1/prescriptions/prescriptions
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer doctor_test
+  X-Correlation-ID: prescription-create-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "appointment_id": 1,
+    "patient_id": 1,
+    "doctor_id": 1,
+    "medication": "Paracetamol",
+    "dosage": "500mg twice daily",
+    "days": 5
+  }
+}

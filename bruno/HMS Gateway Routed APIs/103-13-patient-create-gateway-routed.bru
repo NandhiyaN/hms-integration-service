@@ -1,0 +1,26 @@
+meta {
+  name: Gateway Routed - Patient - Create Patient
+  type: http
+  seq: 103
+}
+
+post {
+  url: http://localhost:9000/api/v1/patients/patients
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer admin_test
+  X-Correlation-ID: patient-create-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "9876543210",
+    "dob": "1990-01-15"
+  }
+}

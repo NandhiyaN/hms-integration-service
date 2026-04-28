@@ -1,0 +1,27 @@
+meta {
+  name: Gateway Routed - Doctor - Create Doctor
+  type: http
+  seq: 109
+}
+
+post {
+  url: http://localhost:9000/api/v1/doctors/doctors
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer admin_test
+  X-Correlation-ID: doctor-create-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Dr. Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "phone": "9876543210",
+    "department": "Cardiology",
+    "specialization": "Interventional Cardiology"
+  }
+}

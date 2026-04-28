@@ -1,0 +1,16 @@
+meta {
+  name: Doctor - Get Doctor Availability
+  type: http
+  seq: 21
+}
+
+get {
+  url: http://localhost:9002/v1/doctors/1/availability?date=2026-05-01
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: doctor-availability-001
+}

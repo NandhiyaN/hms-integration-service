@@ -1,0 +1,16 @@
+meta {
+  name: Appointment - List Appointments
+  type: http
+  seq: 25
+}
+
+get {
+  url: http://localhost:9003/v1/appointments?skip=0&limit=10
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: appointment-list-001
+}

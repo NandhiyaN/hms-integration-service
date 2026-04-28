@@ -1,0 +1,16 @@
+meta {
+  name: Gateway Routed - Patient - Deactivate Patient
+  type: http
+  seq: 106
+}
+
+delete {
+  url: http://localhost:9000/api/v1/patients/patients/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer admin_test
+  X-Correlation-ID: patient-delete-001
+}

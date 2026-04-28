@@ -1,0 +1,16 @@
+meta {
+  name: Gateway Routed - Payment - List Payments
+  type: http
+  seq: 135
+}
+
+get {
+  url: http://localhost:9000/api/v1/payments/payments?skip=0&limit=10
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+  X-Correlation-ID: payment-list-001
+}

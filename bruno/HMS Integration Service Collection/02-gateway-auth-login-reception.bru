@@ -1,0 +1,22 @@
+meta {
+  name: Gateway - Auth Login Reception
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:9000/api/v1/auth/login
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "username": "reception_user",
+    "password": "reception_pass"
+  }
+}

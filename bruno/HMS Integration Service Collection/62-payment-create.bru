@@ -1,0 +1,27 @@
+meta {
+  name: Payment - Create Payment
+  type: http
+  seq: 46
+}
+
+post {
+  url: http://localhost:9006/v1/payments
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+  X-Correlation-ID: payment-create-001
+  Idempotency-Key: payment-key-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "bill_id": 1,
+    "amount": 500.0,
+    "method": "CARD",
+    "reference": "TXN-001"
+  }
+}

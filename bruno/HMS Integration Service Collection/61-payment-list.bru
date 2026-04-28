@@ -1,0 +1,16 @@
+meta {
+  name: Payment - List Payments
+  type: http
+  seq: 45
+}
+
+get {
+  url: http://localhost:9006/v1/payments?skip=0&limit=10
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+  X-Correlation-ID: payment-list-001
+}

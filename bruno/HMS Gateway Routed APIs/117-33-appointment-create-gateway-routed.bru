@@ -1,0 +1,27 @@
+meta {
+  name: Gateway Routed - Appointment - Create Appointment
+  type: http
+  seq: 117
+}
+
+post {
+  url: http://localhost:9000/api/v1/appointments/appointments
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: appointment-create-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "patient_id": 1,
+    "doctor_id": 1,
+    "slot_start": "2026-05-01T10:00:00Z",
+    "slot_end": "2026-05-01T10:30:00Z",
+    "expected_department": "Cardiology"
+  }
+}

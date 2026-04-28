@@ -1,0 +1,16 @@
+meta {
+  name: Doctor - Get Doctor By ID
+  type: http
+  seq: 20
+}
+
+get {
+  url: http://localhost:9002/v1/doctors/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer doctor_test
+  X-Correlation-ID: doctor-get-001
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Doctor - List Doctors
+  type: http
+  seq: 18
+}
+
+get {
+  url: http://localhost:9002/v1/doctors?skip=0&limit=9&is_active=true
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: doctor-list-001
+}

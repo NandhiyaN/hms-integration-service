@@ -1,0 +1,26 @@
+meta {
+  name: Doctor - Update Doctor
+  type: http
+  seq: 22
+}
+
+put {
+  url: http://localhost:9002/v1/doctors/1
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer admin_test
+  X-Correlation-ID: doctor-update-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "phone": "9000000000",
+    "department": "Cardiology",
+    "specialization": "Senior Cardiologist",
+    "is_active": true
+  }
+}

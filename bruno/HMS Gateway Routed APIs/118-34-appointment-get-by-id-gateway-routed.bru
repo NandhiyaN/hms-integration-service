@@ -1,0 +1,16 @@
+meta {
+  name: Gateway Routed - Appointment - Get Appointment By ID
+  type: http
+  seq: 118
+}
+
+get {
+  url: http://localhost:9000/api/v1/appointments/appointments/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: appointment-get-001
+}

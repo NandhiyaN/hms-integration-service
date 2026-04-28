@@ -1,0 +1,16 @@
+meta {
+  name: Appointment - Cancel Appointment
+  type: http
+  seq: 30
+}
+
+post {
+  url: http://localhost:9003/v1/appointments/1/cancel
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: appointment-cancel-001
+}

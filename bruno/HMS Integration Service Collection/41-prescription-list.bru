@@ -1,0 +1,16 @@
+meta {
+  name: Prescription - List Prescriptions
+  type: http
+  seq: 34
+}
+
+get {
+  url: http://localhost:9004/v1/prescriptions?skip=0&limit=10
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer doctor_test
+  X-Correlation-ID: prescription-list-001
+}

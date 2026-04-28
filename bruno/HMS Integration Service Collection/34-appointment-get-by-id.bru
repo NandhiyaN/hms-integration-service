@@ -1,0 +1,16 @@
+meta {
+  name: Appointment - Get Appointment By ID
+  type: http
+  seq: 28
+}
+
+get {
+  url: http://localhost:9003/v1/appointments/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: appointment-get-001
+}

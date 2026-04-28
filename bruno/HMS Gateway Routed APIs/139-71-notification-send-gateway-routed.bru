@@ -1,0 +1,26 @@
+meta {
+  name: Gateway Routed - Notification - Send Notification
+  type: http
+  seq: 139
+}
+
+post {
+  url: http://localhost:9000/api/v1/notifications/notifications
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer admin_test
+  X-Correlation-ID: notification-send-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "patient_id": 1,
+    "type": "sms",
+    "destination": "Registered-Phone",
+    "message": "Your HMS appointment update is available."
+  }
+}

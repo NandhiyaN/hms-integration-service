@@ -1,0 +1,15 @@
+meta {
+  name: Gateway Routed - Billing - Get Bill By ID
+  type: http
+  seq: 129
+}
+
+get {
+  url: http://localhost:9000/api/v1/bills/bills/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+}

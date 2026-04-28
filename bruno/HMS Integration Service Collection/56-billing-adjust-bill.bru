@@ -1,0 +1,23 @@
+meta {
+  name: Billing - Adjust Bill
+  type: http
+  seq: 43
+}
+
+post {
+  url: http://localhost:9005/v1/bills/1/adjust
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "adjustment_amount": 25.0,
+    "reason": "Additional medication charge"
+  }
+}

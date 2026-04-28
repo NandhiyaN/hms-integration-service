@@ -1,0 +1,16 @@
+meta {
+  name: Payment - Refund Payment
+  type: http
+  seq: 47
+}
+
+post {
+  url: http://localhost:9006/v1/payments/1/refund
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+  X-Correlation-ID: payment-refund-001
+}

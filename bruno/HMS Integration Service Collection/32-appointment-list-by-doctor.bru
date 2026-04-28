@@ -1,0 +1,16 @@
+meta {
+  name: Appointment - List Appointments By Doctor
+  type: http
+  seq: 26
+}
+
+get {
+  url: http://localhost:9003/v1/appointments?doctor_id=1&skip=0&limit=10
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: appointment-list-doctor-001
+}

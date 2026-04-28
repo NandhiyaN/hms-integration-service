@@ -1,0 +1,16 @@
+meta {
+  name: Appointment - Update Status Completed
+  type: http
+  seq: 31
+}
+
+post {
+  url: http://localhost:9003/v1/appointments/1/status?status=COMPLETED
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer doctor_test
+  X-Correlation-ID: appointment-status-completed-001
+}

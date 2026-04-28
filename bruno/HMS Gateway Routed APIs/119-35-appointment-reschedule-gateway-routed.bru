@@ -1,0 +1,25 @@
+meta {
+  name: Gateway Routed - Appointment - Reschedule Appointment
+  type: http
+  seq: 119
+}
+
+put {
+  url: http://localhost:9000/api/v1/appointments/appointments/1/reschedule
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: appointment-reschedule-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "slot_start": "2026-05-01T11:00:00Z",
+    "slot_end": "2026-05-01T11:30:00Z",
+    "version": 1
+  }
+}

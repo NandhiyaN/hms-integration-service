@@ -1,0 +1,25 @@
+meta {
+  name: Gateway Routed - Patient - Update Patient
+  type: http
+  seq: 105
+}
+
+put {
+  url: http://localhost:9000/api/v1/patients/patients/1
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+  X-Correlation-ID: patient-update-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "John Doe Updated",
+    "phone": "9000000000",
+    "is_active": true
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Billing - Generate Bill From Appointment
+  type: http
+  seq: 40
+}
+
+post {
+  url: http://localhost:9005/v1/bills/generate-from-appointment/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+}

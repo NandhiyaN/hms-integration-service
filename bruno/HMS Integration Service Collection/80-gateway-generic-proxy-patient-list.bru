@@ -1,0 +1,15 @@
+meta {
+  name: Gateway Generic Proxy - Patient List
+  type: http
+  seq: 50
+}
+
+get {
+  url: http://localhost:9000/api/v1/patient/patients?skip=0&limit=10&is_active=true
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer reception_test
+}

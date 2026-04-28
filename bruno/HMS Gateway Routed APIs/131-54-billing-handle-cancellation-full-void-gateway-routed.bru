@@ -1,0 +1,22 @@
+meta {
+  name: Gateway Routed - Billing - Handle Cancellation Full Void
+  type: http
+  seq: 131
+}
+
+post {
+  url: http://localhost:9000/api/v1/bills/bills/handle-cancellation/1
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer billing_test
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "penalty": 0.0
+  }
+}

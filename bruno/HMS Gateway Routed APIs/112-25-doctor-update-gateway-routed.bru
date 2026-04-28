@@ -1,0 +1,26 @@
+meta {
+  name: Gateway Routed - Doctor - Update Doctor
+  type: http
+  seq: 112
+}
+
+put {
+  url: http://localhost:9000/api/v1/doctors/doctors/1
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer admin_test
+  X-Correlation-ID: doctor-update-001
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "phone": "9000000000",
+    "department": "Cardiology",
+    "specialization": "Senior Cardiologist",
+    "is_active": true
+  }
+}
