@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: prescription
-          image: hms-integration-compose-prescription-service:latest
-          imagePullPolicy: IfNotPresent
+          image: hms-integration-service-prescription-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 9004

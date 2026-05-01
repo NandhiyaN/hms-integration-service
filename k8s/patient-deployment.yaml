@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: patient
-          image: hms-integration-compose-patient-service:latest
-          imagePullPolicy: IfNotPresent
+          image: hms-integration-service-patient-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 9001

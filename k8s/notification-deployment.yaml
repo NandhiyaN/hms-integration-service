@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
         - name: notification-service
-          image: hms-integration-compose-notification-service:latest
+          image: hms-integration-service-notification-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 9007

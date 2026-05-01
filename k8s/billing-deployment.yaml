@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: billing
-          image: hms-integration-compose-billing-service:latest
-          imagePullPolicy: IfNotPresent
+          image: hms-integration-service-billing-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 9005

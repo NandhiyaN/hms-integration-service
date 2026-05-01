@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: hms-integration-compose-gateway-service:latest
-          imagePullPolicy: IfNotPresent
+          image: hms-integration-service-gateway-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 9000
           env:

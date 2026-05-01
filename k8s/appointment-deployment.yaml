@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: appointment
-          image: hms-integration-compose-appointment-service:latest
-          imagePullPolicy: IfNotPresent
+          image: hms-integration-service-appointment-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 9003

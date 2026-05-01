@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
         - name: doctor-service
-          image: hms-integration-compose-doctor-service:latest
+          image: hms-integration-service-doctor-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 9002
